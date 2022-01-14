@@ -14,6 +14,8 @@
 
 #include <string>
 
+#include "LaunchQuotes.hpp"
+
 
 using namespace QuestUI;
 using namespace UnityEngine;
