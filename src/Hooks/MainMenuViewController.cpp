@@ -9,11 +9,10 @@
 #include "UnityEngine/GameObject.hpp"
 #include "UnityEngine/Vector3.hpp"
 #include "UnityEngine/Vector2.hpp"
-
+#include "main.hpp"
 #include "TMPro/TextMeshProUGUI.hpp"
 
 #include <string>
-
 
 
 using namespace QuestUI;
@@ -22,7 +21,10 @@ using namespace UnityEngine::UI;
 using namespace GlobalNamespace;
 
 
-// void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling);
+static int randomInt() {
+    return rand() % 25;
+}
+
 
 
 TMPro::TextMeshProUGUI* text;
@@ -37,9 +39,7 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
 
     getLogger().info("Main Menu Opened");
 
-    static int randomInt() {
-        return rand() % 25;
-    }
+    
     int sentence = randomInt();
 
     if (sentence == 0) {
