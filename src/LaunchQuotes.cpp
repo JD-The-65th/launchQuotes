@@ -1,4 +1,4 @@
-#include "ModName.hpp"
+#include "LaunchQuotes.hpp"
 
 
 void LaunchQuotes::InstallHooks() {
