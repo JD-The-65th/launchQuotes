@@ -128,7 +128,7 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
     if(firstActivation){
         text = BeatSaberUI::CreateText(self->get_transform(), phrase);
 
-        text->get_transform()->set_localPosition({ 0.0f, 65.0f, 360.0f });
+        text->get_transform()->set_localPosition({ 2.0f, 65.0f, 540.0f });
         text->get_transform()->set_localScale({ 4.0f, 4.0f, 4.0f });
     } else {
 
