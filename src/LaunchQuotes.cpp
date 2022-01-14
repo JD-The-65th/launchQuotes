@@ -2,5 +2,5 @@
 
 
 void LaunchQuotes::InstallHooks() {
-  ModName::Hooks::MainMenuViewController();
+  LaunchQuotes::Hooks::MainMenuViewController();
 }
