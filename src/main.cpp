@@ -33,6 +33,6 @@ extern "C" void load() {
 
     getLogger().info("Installing hooks...");
     // Install our hooks 
-    LaunchQuotes::Hooks::MainMenuViewController();
+    LaunchQuotes::InstallHooks();
     getLogger().info("Installed all hooks!");
 }
