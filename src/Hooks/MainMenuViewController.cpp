@@ -14,6 +14,7 @@
 
 #include <string>
 
+#include "main.hpp"
 #include "LaunchQuotes.hpp"
 
 
@@ -127,9 +128,8 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
     if(firstActivation){
         text = BeatSaberUI::CreateText(self->get_transform(), phrase);
 
-        text->get_transform()->set_localPosition({ 0.0f, 80.0f, -90.0f });
+        text->get_transform()->set_localPosition({ -2.0f, 60.0f, 90.0f });
         text->get_transform()->set_localScale({ 4.0f, 4.0f, 4.0f });
-
     } else {
 
     }
