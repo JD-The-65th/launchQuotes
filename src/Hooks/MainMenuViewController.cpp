@@ -18,6 +18,9 @@
 #include "LaunchQuotes.hpp"
 
 
+
+
+
 using namespace QuestUI;
 using namespace UnityEngine;
 using namespace UnityEngine::UI;
@@ -25,7 +28,7 @@ using namespace GlobalNamespace;
 
 
 static int randomInt() {
-    return rand() % 25;
+    return rand() % 58;
 }
 
 
@@ -120,16 +123,121 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
         phrase = "I'm not a fan of you";
     }
     if (sentence == 24) {
-        phrase = "If furries decided to turn off their phones for one day, the Internet would literally crumble";
+        phrase = "Acc trash";
     }
     if (sentence == 25) {
         phrase = "Furries are a major part of the IT industry";
     }
+    if (sentence == 26) {
+        phrase = "You should also try beats and shapes";
+    }
+    if (sentence == 27) {
+        phrase = "New york is from New York";
+    }
+    if (sentence == 28) {
+        phrase = "Goodbye America, hello New York";
+    }
+    if (sentence == 29) {
+        phrase = "Also try MoonRider.xyz";
+    }
+    if (sentence == 30) {
+        phrase = "What day is it";
+    }
+    if (sentence == 31) {
+        phrase = "100 Percent Goose free";
+    }
+    if (sentence == 32) {
+        phrase = "Come on, how hard could making it cross platform be?";
+    }
+    if (sentence == 33) {
+        phrase = "Just hit the bloq, It’s really easy";
+    }
+    if (sentence == 34) {
+        phrase = "Having an issue? Ask in #quest-help";
+    }
+    if (sentence == 35) {
+        phrase = "Having an issue? Don’t";
+    }
+    if (sentence == 36) {
+        phrase = "Why is New York called New York";
+    }
+    if (sentence == 37) {
+        phrase = "dope ass game - XBOX magazine";
+    }
+    if (sentence == 38) {
+        phrase = "Get Gud";
+    }
+    if (sentence == 39) {
+        phrase = "[Quest] Noodle Extensions";
+    }
+    if (sentence == 40) {
+        phrase = "Too many weeks";
+    }
+    if (sentence == 41) {
+        phrase = "wHy DiD tHe DeVs BrEaK mOdS aGaIn";
+    }
+    if (sentence == 42) {
+        phrase = "It's a game!";
+    }
+    if (sentence == 43) {
+        phrase = "my mother stole my homework";
+    }
+    if (sentence == 44) {
+        phrase = "peepoDuck";
+    }
+    if (sentence == 45) {
+        phrase = "pink cute eris cute goobie cute scad";
+    }
+    if (sentence == 46) {
+        phrase = "wdym my spelling is corect(edited)";
+    }
+    if (sentence == 47) {
+        phrase = "anomaly detected. Banging you're mom";
+    }
+    if (sentence == 48) {
+        phrase = "anomaly detected, doin ur mom";
+    }
+    if (sentence == 49) {
+        phrase = "how do i get noodle extensions(edited)";
+    }
+    if (sentence == 50) {
+        phrase = "cyan is a furry";
+    }
+    if (sentence == 51) {
+        phrase = "chroma NOT included";
+    }
+    if (sentence == 52) {
+        phrase = "Supports Noozle Extensions";
+    }
+    if (sentence == 53) {
+        phrase = "#quest-help";
+    }
+    if (sentence == 54) {
+        phrase = "SaberFactory";
+    }
+    // Use potential phrases here
+    if (sentence == 55) {
+        phrase = "Heqq";
+    }
+    if (sentence == 56) {
+        phrase = "wen BMBF???";
+    }
+    if (sentence == 57) {
+        phrase = "BMBF";
+    }
+    if (sentence == 58) {
+        phrase = "william LGBTQ+ (in anime)";
+    }
+
+
+
+
     if(firstActivation){
         text = BeatSaberUI::CreateText(self->get_transform(), phrase);
 
         text->get_transform()->set_localPosition({ 15.0f, 150.0f, 360.0f });
         text->get_transform()->set_localScale({ 4.0f, 4.0f, 4.0f });
+
     } else {
 
     }
