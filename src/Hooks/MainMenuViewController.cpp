@@ -24,7 +24,7 @@ using namespace GlobalNamespace;
 
 
 
-static std::vector<std::string> quotes = {
+std::vector<std::string> quotes = {
 
     // thank you github copilot, you made this not tedious to copy over.
     "Well that's just the cost of Limerence.",
@@ -91,6 +91,11 @@ static std::vector<std::string> quotes = {
     "thank god for gh copilot",
 };
 
+std::string randomQuote() {
+    int index = rand() % quotes.size();
+    return quotes[index];
+}
+
 
 
 TMPro::TextMeshProUGUI* text;
@@ -105,10 +110,7 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
 
     getLogger().info("Main Menu Opened");
 
-    std::string randomQuote() {
-        int index = rand() % quotes.size();
-        return quotes[index];
-    }
+    
     
 
 
