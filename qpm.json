@@ -7,8 +7,8 @@
     "version": "0.1.0",
     "url": null,
     "additionalData": {
-       "overrideSoName": "libmenuquotes.so"
-       }
+      "overrideSoName": "libmenuquotes.so"
+    }
   },
   "dependencies": [
     {
