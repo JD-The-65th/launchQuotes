@@ -6,12 +6,9 @@
     "author": "JD The Fusky",
     "version": "0.1.0",
     "packageId": "com.beatgames.beatsaber",
-    "packageVersion": "1.17.1",
+    "packageVersion": "1.19.0",
     "description": "Like minecraft but for beat saber",
     "modFiles": [
         "libmenuquotes.so"
-    ],
-    "libraryFiles": [
-        "libbeatsaber-hook_2_3_2.so"
     ]
 }
