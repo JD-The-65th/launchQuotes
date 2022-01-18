@@ -17,19 +17,79 @@
 #include "main.hpp"
 #include "LaunchQuotes.hpp"
 
-
-
-
-
 using namespace QuestUI;
 using namespace UnityEngine;
 using namespace UnityEngine::UI;
 using namespace GlobalNamespace;
 
 
-static int randomInt() {
-    return rand() % 58;
-}
+
+static std::vector<std::string> quotes = {
+
+    // thank you github copilot, you made this not tedious to copy over.
+    "Well that's just the cost of Limerence.",
+    "I'm not a cop, I'm a cop with a gun.",
+    "BMBF WHEN",
+    "BMBF NOW",
+    "Just like in minecraft!",
+    "ew u stink",
+    "bandoot known hacker",
+    "crying's easier in secret",
+    "you better not be going to play a cametek map",
+    "you better be going to play a cametek map",
+    "JD is sad",
+    "ur mom says hi",
+    "ANOMALY DETECTED, BANGING UR MOM",
+    "you better not be going to play a cametek map",
+    "hee hee",
+    "the tiny little piece on the quest 2 strap broke ;-;",
+    "sugma",
+    "sugma is a bitch",
+    "Karen said she'd give me the kids back if you S'd the next song",
+    "about soulless 5...",
+    "pp trash",
+    "acc trach",
+    "ur mom is proud of you",
+    "glad to see you've gotten off twitter",
+    "doot doot",
+    "E A SPORTS!",
+    "It's in the game",
+    "I'm not a fan of you",
+    "Acc trash",
+    "Furries are a major part of the IT industry",
+    "You should also try beats and shapes",
+    "New york is from New York",
+    "Goodbye America, hello New York",
+    "Also try MoonRider.xyz",
+    "What day is it",
+    "100 Percent Goose free",
+    "Come on, how hard could making it cross platform be?",
+    "Just hit the bloq, It’s really easy",
+    "Having an issue? Ask in #quest-help",
+    "Having an issue? Don’t",
+    "Why is New York called New York",
+    "dope ass game - XBOX magazine",
+    "Get Gud",
+    "[Quest] Noodle Extensions",
+    "Too many weeks",
+    "wHy DiD tHe DeVs BrEaK mOdS aGaIn",
+    "It's a game!",
+    "my mother stole my homework",
+    "peepoDuck",
+    "pink cute eris cute goobie cute scad",
+    "wdym my spelling is corect(edited)",
+    "anomaly detected. Banging you're mom",
+    "anomaly detected, doin ur mom",
+    "how do i get noodle extensions(edited)",
+    "cyan is a furry",
+    "chroma NOT included",
+    "Supports Noozle Extensions",
+    "#quest-help",
+    "SaberFactory",
+    "Heqq",
+    "wen BMBF???"
+    "thank god for gh copilot",
+};
 
 
 
@@ -45,195 +105,17 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
 
     getLogger().info("Main Menu Opened");
 
+    std::string randomQuote() {
+        int index = rand() % quotes.size();
+        return quotes[index];
+    }
     
-    int sentence = randomInt();
-
-    std::string phrase;
-
-    if (sentence == 0) {
-        phrase = "BMBF WHEN";
-    }
-    if (sentence == 1) {
-        phrase = "BMBF NOW";
-    }
-    if (sentence == 2) {
-        phrase = "Just like in minecraft!";
-    }
-    if (sentence == 3) {
-        phrase = "ew u stink";
-    }
-    if (sentence == 4) {
-        phrase = "bandoot known hacker";
-    }
-    if (sentence == 5) {
-        phrase = "you better not be going to play a cametek map";
-    }
-    if (sentence == 6) {
-        phrase = "you better be going to play a cametek map";
-    }
-    if (sentence == 7) {
-        phrase = "JD is sad";
-    }
-    if (sentence == 8) {
-        phrase = "ur mom says Hi.";
-    }
-    if (sentence == 9) {
-        phrase = "ANOMALY DETECTED. BANGING UR MOM.";
-    }
-    if (sentence == 10) {
-        phrase = "hee hee";
-    }
-    if (sentence == 11) {
-        phrase = "the tiny little piece on the quest 2 strap broke ;-;";
-    }
-    if (sentence == 12) {
-        phrase = "sugma";
-    }
-    if (sentence == 13) {
-        phrase = "sugma is a bitch";
-    }
-    if (sentence == 14) {
-        phrase = "Karen said she'd give me the kids back if you S'd the next song";
-    }
-    if (sentence == 15) {
-        phrase = "about soulless 5...";
-    }   
-    if (sentence == 16) {
-        phrase = "pp trash";
-    }
-    if (sentence == 17) {
-        phrase = "acc trach";
-    }
-    if (sentence == 18) {
-        phrase = "ur mom is proud of you";
-    }
-    if (sentence == 19) {
-        phrase = "glad to see you've gotten off twitter";
-    }
-    if (sentence == 20) {
-        phrase = "doot doot";
-    }
-    if (sentence == 21) {
-        phrase = "E A SPORTS!";
-    }
-    if (sentence == 22) {
-        phrase = "It's in the game";
-    }
-    if (sentence == 23) {
-        phrase = "I'm not a fan of you";
-    }
-    if (sentence == 24) {
-        phrase = "Acc trash";
-    }
-    if (sentence == 25) {
-        phrase = "Furries are a major part of the IT industry";
-    }
-    if (sentence == 26) {
-        phrase = "You should also try beats and shapes";
-    }
-    if (sentence == 27) {
-        phrase = "New york is from New York";
-    }
-    if (sentence == 28) {
-        phrase = "Goodbye America, hello New York";
-    }
-    if (sentence == 29) {
-        phrase = "Also try MoonRider.xyz";
-    }
-    if (sentence == 30) {
-        phrase = "What day is it";
-    }
-    if (sentence == 31) {
-        phrase = "100 Percent Goose free";
-    }
-    if (sentence == 32) {
-        phrase = "Come on, how hard could making it cross platform be?";
-    }
-    if (sentence == 33) {
-        phrase = "Just hit the bloq, It’s really easy";
-    }
-    if (sentence == 34) {
-        phrase = "Having an issue? Ask in #quest-help";
-    }
-    if (sentence == 35) {
-        phrase = "Having an issue? Don’t";
-    }
-    if (sentence == 36) {
-        phrase = "Why is New York called New York";
-    }
-    if (sentence == 37) {
-        phrase = "dope ass game - XBOX magazine";
-    }
-    if (sentence == 38) {
-        phrase = "Get Gud";
-    }
-    if (sentence == 39) {
-        phrase = "[Quest] Noodle Extensions";
-    }
-    if (sentence == 40) {
-        phrase = "Too many weeks";
-    }
-    if (sentence == 41) {
-        phrase = "wHy DiD tHe DeVs BrEaK mOdS aGaIn";
-    }
-    if (sentence == 42) {
-        phrase = "It's a game!";
-    }
-    if (sentence == 43) {
-        phrase = "my mother stole my homework";
-    }
-    if (sentence == 44) {
-        phrase = "peepoDuck";
-    }
-    if (sentence == 45) {
-        phrase = "pink cute eris cute goobie cute scad";
-    }
-    if (sentence == 46) {
-        phrase = "wdym my spelling is corect(edited)";
-    }
-    if (sentence == 47) {
-        phrase = "anomaly detected. Banging you're mom";
-    }
-    if (sentence == 48) {
-        phrase = "anomaly detected, doin ur mom";
-    }
-    if (sentence == 49) {
-        phrase = "how do i get noodle extensions(edited)";
-    }
-    if (sentence == 50) {
-        phrase = "cyan is a furry";
-    }
-    if (sentence == 51) {
-        phrase = "chroma NOT included";
-    }
-    if (sentence == 52) {
-        phrase = "Supports Noozle Extensions";
-    }
-    if (sentence == 53) {
-        phrase = "#quest-help";
-    }
-    if (sentence == 54) {
-        phrase = "SaberFactory";
-    }
-    // Use potential phrases here
-    if (sentence == 55) {
-        phrase = "Heqq";
-    }
-    if (sentence == 56) {
-        phrase = "wen BMBF???";
-    }
-    if (sentence == 57) {
-        phrase = "BMBF";
-    }
-    if (sentence == 58) {
-        phrase = "william LGBTQ+ (in anime)";
-    }
 
 
 
 
     if(firstActivation){
-        text = BeatSaberUI::CreateText(self->get_transform(), phrase);
+        text = BeatSaberUI::CreateText(self->get_transform(), randomQuote());
 
         text->get_transform()->set_localPosition({ 15.0f, 150.0f, 360.0f });
         text->get_transform()->set_localScale({ 4.0f, 4.0f, 4.0f });
