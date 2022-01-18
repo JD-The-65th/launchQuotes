@@ -47,7 +47,7 @@
     },
     {
       "id": "questui_components",
-      "versionRange": "^0.2.0",
+      "versionRange": "^0.1.0",
       "additionalData": {}
     }
   ],
