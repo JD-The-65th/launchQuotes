@@ -84,8 +84,11 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}
           pwsh -Command ./build.ps1
-# TODO: Generate QMOD
-#          ./QPM/qpm-rust qmod build
+
+
+      - name: Generate QMOD
+        run: |   
+          ./QPM/qpm-rust qmod build
 
       - name: Create Qmod
         run: |
