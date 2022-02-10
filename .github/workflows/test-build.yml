@@ -72,6 +72,10 @@ jobs:
         ls -la ${GITHUB_WORKSPACE}/extern/libs
         echo cache:
         ls -la $HOME/.local/share/QPM-Rust/cache
+    - name: QMOD-Build
+      run: |
+        chmod +x ./QPM/qpm-rust
+        ./QPM/qpm-rust qmod build
     - name: Build
       run: |
         cd ${GITHUB_WORKSPACE}

@@ -22,13 +22,17 @@
     },
     {
       "id": "codegen",
-      "versionRange": "^0.18.0",
-      "additionalData": {}
+      "versionRange": "^0.19",
+      "additionalData": {
+        "private": true
+      }
     },
     {
       "id": "custom-types",
       "versionRange": "^0.15.0",
-      "additionalData": {}
+      "additionalData": {
+        "private": true
+      }
     },
     {
       "id": "modloader",
@@ -37,12 +41,14 @@
     },
     {
       "id": "config-utils",
-      "versionRange": "^0.6.0",
-      "additionalData": {}
+      "versionRange": "*",
+      "additionalData": {
+        "private": true
+      }
     },
     {
       "id": "questui",
-      "versionRange": "^0.12.0",
+      "versionRange": "^0.13.0",
       "additionalData": {
         "private": true
       }
