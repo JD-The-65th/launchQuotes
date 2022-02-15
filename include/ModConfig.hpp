@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-#include "config-utils.hpp"
+#include "config-utils/shared/config-utils.hpp"
 
 DECLARE_CONFIG(ModConfig,
     CONFIG_VALUE(quote1, std::String, "quote1", "i forgor");
@@ -18,7 +18,7 @@ DECLARE_CONFIG(ModConfig,
         CONFIG_INIT_VALUE(quote4);
         CONFIG_INIT_VALUE(quote5);
         CONFIG_INIT_VALUE(quote6);
-        
+
         
     )
 )
