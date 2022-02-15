@@ -1,5 +1,6 @@
 #include "main.hpp"
 #include "LaunchQuotes.hpp"
+#include "config-utils.hpp"
 
 
 
@@ -27,6 +28,7 @@ extern "C" void setup(ModInfo& info) {
     getConfig().Load(); // Load the config file
     getLogger().info("Completed setup!");
 }
+DEFINE_CONFIG(ModConfig);
 
 // Called later on in the game loading - a good time to install function hooks
 extern "C" void load() {
