@@ -64,9 +64,9 @@ std::vector<std::string> quotes = {
     "What day is it",
     "100 Percent Goose free",
     "Come on, how hard could making it cross platform be?",
-    "Just hit the bloq, It’s really easy",
+    "Just hit the bloq, It is really easy",
     "Having an issue? Ask in #quest-help",
-    "Having an issue? Don’t",
+    "Having an issue? Do not.",
     "Why is New York called New York",
     "dope ass game - XBOX magazine",
     "Get Gud",
@@ -88,7 +88,9 @@ std::vector<std::string> quotes = {
     "SaberFactory",
     "Heqq",
     "wen BMBF???"
-    "thank god for gh copilot",
+    "thank god for github copilot",
+    "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    "every single night im on rule 34, beating my dick to some anime whore"
 };
 
 std::string randomQuote() {
