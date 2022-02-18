@@ -96,81 +96,11 @@ std::vector<std::string> quotePool = {
 };
 
 std::string randomQuote() {
-    quotePool = quotePool + loadFromJson();
     int index = rand() % quotePool.size();
     return quotePool[index];
 }
 
-// Create a function to save a quote to a json file
 
-void saveToJson(std::string quote)
-{
-    // Create a new document
-    rapidjson::Document doc;
-    doc.SetObject();
-
-    // Create a new value
-    rapidjson::Value value(rapidjson::kStringType);
-    value.SetString(quote.c_str(), doc.GetAllocator());
-
-    // Add the value to the document
-    doc.AddMember("quote", value, doc.GetAllocator());
-
-    // Create a string stream
-    std::stringstream ss;
-
-    // Create a writer
-    rapidjson::Writer<std::stringstream> writer(ss);
-
-    // Write the document to the stream
-    doc.Accept(writer);
-
-    // Get the string from the stream
-    std::string json = ss.str();
-
-    // Save the string to a file
-    std::ofstream file("quotes.json");
-    file << json;
-    file.close();
-    getLogger().info("Quote saved to json");
-}
-
-// make a function to load the quotes from the json file
-
-std::array<std::string, 10> loadFromJson()
-{
-    // Create a new document
-    rapidjson::Document doc;
-
-    // Create a string stream
-    std::stringstream ss;
-
-    // Load the file
-    std::ifstream file("quotes.json");
-
-    // Put the file into the string stream
-    ss << file.rdbuf();
-
-    // Close the file
-    file.close();
-
-    // Parse the string stream
-    doc.Parse(ss.str().c_str());
-
-    // Create an array to hold the quotes
-    std::array<std::string, 10> quotes;
-
-    // Loop through the quotes
-    for (int i = 0; i < 10; i++)
-    {
-        // Get the quote
-        quotes[i] = doc["quote"].GetString();
-    }
-
-    // Return the quotes
-    getLogger().info("Quotes Returned.");
-    return quotes;
-}
 
 
 
@@ -194,7 +124,6 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
 
 
     if(firstActivation){
-        saveToJson("Let's try this...");
         text = BeatSaberUI::CreateText(self->get_transform(), randomQuote());
 
         text->get_transform()->set_localPosition({ 15.0f, 150.0f, 360.0f });
