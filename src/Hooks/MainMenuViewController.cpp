@@ -17,7 +17,7 @@
 #include "main.hpp"
 #include "LaunchQuotes.hpp"
 
-#include "custom-json-data/shared/JSONWrapper.hpp"
+#include "JSONWrapper.hpp"
 
 using namespace QuestUI;
 using namespace UnityEngine;
