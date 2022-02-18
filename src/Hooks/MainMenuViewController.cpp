@@ -91,8 +91,8 @@ std::vector<std::string> quotePool = {
     "Heqq",
     "wen BMBF???"
     "thank god for github copilot",
-    "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-    "every single night im on rule 34, beating my dick to some anime whore"
+    "AAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "every single night im on rule 34, beating my dick to some anime whore",
     "insert overused meme"
 };
 
@@ -125,6 +125,7 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
 
 
     if(firstActivation){
+        // Legacy code, replacing with questui_components soon tm. Default to this if you encounter issues with QUC
         text = BeatSaberUI::CreateText(self->get_transform(), randomQuote());
 
         text->get_transform()->set_localPosition({ 15.0f, 150.0f, 360.0f });
