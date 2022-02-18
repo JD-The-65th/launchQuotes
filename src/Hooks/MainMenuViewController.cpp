@@ -93,6 +93,7 @@ std::vector<std::string> quotePool = {
     "thank god for github copilot",
     "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     "every single night im on rule 34, beating my dick to some anime whore"
+    "insert overused meme"
 };
 
 std::string randomQuote() {
