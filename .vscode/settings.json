@@ -120,5 +120,5 @@
         "semaphore": "cpp",
         "stop_token": "cpp"
     },
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": false
 }
