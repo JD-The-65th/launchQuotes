@@ -132,5 +132,7 @@ perf.data
 
 android-ndk-r24-beta3/
 linux-qpm-rust/
+qpm-rust
+powershell-lts_7.2.1-1.deb_amd64.deb
 
 *.qmod
