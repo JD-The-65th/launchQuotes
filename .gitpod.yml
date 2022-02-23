@@ -3,8 +3,7 @@
 
 
 tasks:
-  - init: wget https://dl.google.com/android/repository/android-ndk-r24-rc1-linux.zip && unzip android-ndk-r24-rc1-linux.zip && rm -r -f android-ndk-r24-rc1-linux.zip && echo "./android-ndk-r24-beta3" > ndkpath.txt && wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.1/powershell-lts_7.2.1-1.deb_amd64.deb && sudo dpkg -i powershell-lts_7.2.1-1.deb_amd64.deb && sudo apt-get install -f && rm -r -f powershell-lts_7.2.1-1.deb_amd64.deb && wget https://nightly.link/RedBrumbler/QuestPackageManager-Rust/workflows/cargo-build/main/linux-qpm-rust.zip && unzip linux-qpm-rust.zip && chmod +x qpm-rust && ./qpm-rust restore
-    command: pwsh ./build.ps1 
+  - init: wget https://dl.google.com/android/repository/android-ndk-r24-rc1-linux.zip && unzip android-ndk-r24-rc1-linux.zip && rm -r -f android-ndk-r24-rc1-linux.zip && echo "/workspace/launchQuotes/android-ndk-r24-beta3" > ndkpath.txt && wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.1/powershell-lts_7.2.1-1.deb_amd64.deb && sudo dpkg -i powershell-lts_7.2.1-1.deb_amd64.deb && sudo apt-get install -f && rm -r -f powershell-lts_7.2.1-1.deb_amd64.deb && wget https://nightly.link/RedBrumbler/QuestPackageManager-Rust/workflows/cargo-build/main/linux-qpm-rust.zip && unzip linux-qpm-rust.zip && chmod +x qpm-rust && ./qpm-rust restore && pwsh ./build.ps1 
     
 
 
