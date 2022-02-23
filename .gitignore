@@ -130,4 +130,7 @@ vcs.xml
 
 perf.data
 
+android-ndk-r24-beta3/
+linux-qpm-rust/
+
 *.qmod
