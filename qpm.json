@@ -7,7 +7,10 @@
     "version": "0.5.1",
     "url": null,
     "additionalData": {
-      "overrideSoName": "libmenuquotes.so"
+      "soLink": "https://github.com/JD-The-65th/launchQuotes/releases/download/v0.5.1/libmenuquotes.so",
+      "overrideSoName": "libmenuquotes.so",
+      "modLink": "https://github.com/JD-The-65th/launchQuotes/releases/download/v0.5.1/menuquotes.qmod",
+      "branchName": "version-v0.5.1"
     }
   },
   "dependencies": [
