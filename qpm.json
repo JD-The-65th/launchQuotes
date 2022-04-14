@@ -57,11 +57,6 @@
       "id": "questui_components",
       "versionRange": "^2.0.0",
       "additionalData": {}
-    },
-    {
-      "id": "custom-json-data",
-      "versionRange": "^0.16.0",
-      "additionalData": {}
     }
   ],
   "additionalData": {}
