@@ -3,8 +3,12 @@
 #include "beatsaber-hook/shared/utils/il2cpp-utils.hpp"
 #include "beatsaber-hook/shared/utils/hooking.hpp"
 
+#include "questui_components/shared/components/Text.hpp"
+#include "sombrero/shared/FastColor.hpp"
+
 #include "questui/shared/QuestUI.hpp"
 #include "questui/shared/BeatSaberUI.hpp"
+#include "questui/shared/CustomTypes/Components/ExternalComponents.hpp"
 
 #include "UnityEngine/GameObject.hpp"
 #include "UnityEngine/Vector3.hpp"
@@ -22,7 +26,7 @@ using namespace QuestUI;
 using namespace UnityEngine;
 using namespace UnityEngine::UI;
 using namespace GlobalNamespace;
-
+using namespace QUC;
 
 
 std::vector<std::string> quotePool = {
@@ -92,7 +96,8 @@ std::vector<std::string> quotePool = {
     "thank god for github copilot",
     "AAAAAAAAAAAAAAAAAAAAAAAAAAAA",
     "every single night im on rule 34, beating my dick to some anime whore",
-    "insert overused meme"
+    "insert overused meme",
+    "adhd personified"
 };
 
 std::string randomQuote() {
@@ -100,10 +105,7 @@ std::string randomQuote() {
     return quotePool[index];
 }
 
-
-
-
-
+static RenderContext textCtx = nullptr;
 
 TMPro::TextMeshProUGUI* text;
 
@@ -117,18 +119,15 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
 
     getLogger().info("Main Menu Opened");
 
-    
-    
-
-
-
-
     if(firstActivation){
         // Legacy code, replacing with questui_components soon tm. Default to this if you encounter issues with QUC
+        // /*
         text = BeatSaberUI::CreateText(self->get_transform(), randomQuote());
 
         text->get_transform()->set_localPosition({ 15.0f, 150.0f, 360.0f });
-        text->get_transform()->set_localScale({ 4.0f, 4.0f, 4.0f });
+        text->get_transform()->set_localScale({ 4.0f, 4.0f, 4.0f }); 
+        // */
+
 
     } else {
 
