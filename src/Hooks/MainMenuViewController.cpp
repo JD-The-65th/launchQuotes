@@ -3,14 +3,12 @@
 #include "beatsaber-hook/shared/utils/il2cpp-utils.hpp"
 #include "beatsaber-hook/shared/utils/hooking.hpp"
 
-#include "questui_components/shared/components/Text.hpp"
 #include "sombrero/shared/FastColor.hpp"
 
-#include "questui/shared/QuestUI.hpp"
-#include "questui/shared/BeatSaberUI.hpp"
 #include "questui/shared/CustomTypes/Components/ExternalComponents.hpp"
 
 #include "UnityEngine/GameObject.hpp"
+#include "UnityEngine/Transform.hpp"
 #include "UnityEngine/Vector3.hpp"
 #include "UnityEngine/Vector2.hpp"
 #include "main.hpp"
@@ -20,6 +18,17 @@
 
 #include "main.hpp"
 #include "LaunchQuotes.hpp"
+
+#include "questui/shared/QuestUI.hpp"
+#include "questui/shared/BeatSaberUI.hpp"
+#include "questui/shared/CustomTypes/Components/MainThreadScheduler.hpp"
+#include "questui_components/shared/reference_comp.hpp"
+#include "questui_components/shared/components/Text.hpp"
+#include "questui_components/shared/components/ScrollableContainer.hpp"
+#include "questui_components/shared/components/Modal.hpp"
+#include "questui_components/shared/components/layouts/VerticalLayoutGroup.hpp"
+#include "questui_components/shared/components/layouts/HorizontalLayoutGroup.hpp"
+
 
 
 using namespace QuestUI;
@@ -105,9 +114,31 @@ std::string randomQuote() {
     return quotePool[index];
 }
 
-static RenderContext textCtx = nullptr;
-
 TMPro::TextMeshProUGUI* text;
+// Yoinked from https://github.com/Fernthedev/questui_components/blob/master/test/src/main.cpp
+auto HandleLoadingView(QUC::RenderContext& ctx, bool& loaded) {
+    using namespace QUC;
+
+
+    static Text text(randomQuote());
+    static auto view = ScrollableContainer(
+            detail::refComp(text)
+    );
+
+    auto transform = QUC::detail::renderSingle(view, ctx);
+
+    getLogger().debug("Loading %p", transform);
+
+//    static UnityEngine::Transform* scrollTransform;
+//    scrollTransform = LoadingView(templateLoadingText).render(ctx);
+
+    // async UI!
+    QUC::detail::renderSingle(view, ctx);
+
+    return transform;
+}
+
+
 
 MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::DidActivate, void,
     MainMenuViewController* self,
@@ -121,12 +152,28 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
 
     if(firstActivation){
         // Legacy code, replacing with questui_components soon tm. Default to this if you encounter issues with QUC
-        // /*
+        /*
         text = BeatSaberUI::CreateText(self->get_transform(), randomQuote());
 
         text->get_transform()->set_localPosition({ 15.0f, 150.0f, 360.0f });
         text->get_transform()->set_localScale({ 4.0f, 4.0f, 4.0f }); 
-        // */
+        */
+
+       // New QUC code goes below
+
+       static RenderContext loadingCtx(self->get_transform());
+       static RenderContext ctx(self->get_transform());
+       static bool loaded = false;
+
+       static UnityEngine::Transform* loadingViewTransform;
+
+       if (!loaded) {
+            loadingViewTransform = HandleLoadingView(loadingCtx, loaded);
+       }
+       
+       
+
+
 
 
     } else {
