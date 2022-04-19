@@ -4,7 +4,8 @@
 #include "config-utils/shared/config-utils.hpp"
 
 DECLARE_CONFIG(ModConfig,
-    CONFIG_VALUE(custQuotesEnabled, bool, "custQuotesEnabled" false);
+    
+    CONFIG_VALUE(custQuoteActive, bool, "custQuoteActive", false);
 
     CONFIG_VALUE(quote1, std::string, "quote1", "i forgor");
 
@@ -40,37 +41,22 @@ DECLARE_CONFIG(ModConfig,
 
 
     CONFIG_INIT_FUNCTION(
-        CONFIG_INIT_VALUE(custQuotesEnabled);
+        CONFIG_INIT_VALUE(custQuoteActive);
         CONFIG_INIT_VALUE(quote1);
-        CONFIG_INIT_VALUE(quote1Active);
         CONFIG_INIT_VALUE(quote2);
-        CONFIG_INIT_VALUE(quote2Active);
         CONFIG_INIT_VALUE(quote3);
-        CONFIG_INIT_VALUE(quote3Active);
         CONFIG_INIT_VALUE(quote4);
-        CONFIG_INIT_VALUE(quote4Active);
         CONFIG_INIT_VALUE(quote5);
-        CONFIG_INIT_VALUE(quote5Active);
         CONFIG_INIT_VALUE(quote6);
-        CONFIG_INIT_VALUE(quote6Active);
         CONFIG_INIT_VALUE(quote7);
-        CONFIG_INIT_VALUE(quote7Active);
         CONFIG_INIT_VALUE(quote8);
-        CONFIG_INIT_VALUE(quote8Active);
         CONFIG_INIT_VALUE(quote9);
-        CONFIG_INIT_VALUE(quote9Active);
         CONFIG_INIT_VALUE(quote10);
-        CONFIG_INIT_VALUE(quote10Active);
         CONFIG_INIT_VALUE(quote11);
-        CONFIG_INIT_VALUE(quote11Active);
         CONFIG_INIT_VALUE(quote12);
-        CONFIG_INIT_VALUE(quote12Active);
         CONFIG_INIT_VALUE(quote13);
-        CONFIG_INIT_VALUE(quote13Active);
         CONFIG_INIT_VALUE(quote14);
-        CONFIG_INIT_VALUE(quote14Active);
         CONFIG_INIT_VALUE(quote15);
-        CONFIG_INIT_VALUE(quote15Active);
         CONFIG_INIT_VALUE(numCustomQuotesActive);
 
         
