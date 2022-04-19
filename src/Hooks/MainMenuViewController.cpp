@@ -116,7 +116,7 @@ std::string randomQuote() {
 
 TMPro::TextMeshProUGUI* text;
 // Yoinked from https://github.com/Fernthedev/questui_components/blob/master/test/src/main.cpp
-auto HandleLoadingView(QUC::RenderContext& ctx, bool& loaded) {
+auto TextView(QUC::RenderContext& ctx, bool& loaded) {
     using namespace QUC;
 
 
@@ -132,7 +132,6 @@ auto HandleLoadingView(QUC::RenderContext& ctx, bool& loaded) {
 //    static UnityEngine::Transform* scrollTransform;
 //    scrollTransform = LoadingView(templateLoadingText).render(ctx);
 
-    // async UI!
     QUC::detail::renderSingle(view, ctx);
 
     return transform;
@@ -168,7 +167,7 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
        static UnityEngine::Transform* loadingViewTransform;
 
        if (!loaded) {
-            loadingViewTransform = HandleLoadingView(loadingCtx, loaded);
+            loadingViewTransform = TextView(loadingCtx, loaded);
        }
        
        
