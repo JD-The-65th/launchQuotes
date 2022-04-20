@@ -33,6 +33,7 @@ DEFINE_CONFIG(ModConfig);
 
 // Called later on in the game loading - a good time to install function hooks
 extern "C" void load() {
+    getModConfig().Init(modInfo); 
     il2cpp_functions::Init();
 
     getLogger().info("Installing hooks...");

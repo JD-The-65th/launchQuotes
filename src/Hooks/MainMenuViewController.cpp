@@ -15,6 +15,7 @@
 #include "TMPro/TextMeshProUGUI.hpp"
 
 #include <string>
+#include "ModConfig.hpp"
 
 #include "main.hpp"
 #include "LaunchQuotes.hpp"
@@ -29,6 +30,7 @@
 #include "questui_components/shared/components/layouts/VerticalLayoutGroup.hpp"
 #include "questui_components/shared/components/layouts/HorizontalLayoutGroup.hpp"
 
+#include "config-utils/shared/config-utils.hpp"
 
 
 using namespace QuestUI;
@@ -36,6 +38,9 @@ using namespace UnityEngine;
 using namespace UnityEngine::UI;
 using namespace GlobalNamespace;
 using namespace QUC;
+
+
+
 
 
 std::vector<std::string> quotePool = {
@@ -112,11 +117,23 @@ std::vector<std::string> quotePool = {
 std::string randomQuote() {
     int index = rand() % quotePool.size();
     return quotePool[index];
-}
+};  
+
+
+
+
+
+
+
+
+
+
+    
+
 
 TMPro::TextMeshProUGUI* text;
 // Yoinked from https://github.com/Fernthedev/questui_components/blob/master/test/src/main.cpp
-auto TextView(QUC::RenderContext& ctx, bool& loaded) {
+auto TextObject(QUC::RenderContext& ctx, bool& loaded) {
     using namespace QUC;
 
 
@@ -167,11 +184,9 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
        static UnityEngine::Transform* loadingViewTransform;
 
        if (!loaded) {
-            loadingViewTransform = TextView(loadingCtx, loaded);
-       }
+            loadingViewTransform = TextObject(loadingCtx, loaded);
+        }
        
-       
-
 
 
 

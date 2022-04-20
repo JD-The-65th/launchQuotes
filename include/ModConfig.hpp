@@ -37,8 +37,6 @@ DECLARE_CONFIG(ModConfig,
 
     CONFIG_VALUE(quote15, std::string, "quote15", "e");
 
-    CONFIG_VALUE(numCustomQuotesActive, int, "numCustomQuotesActive", 0);
-
 
     CONFIG_INIT_FUNCTION(
         CONFIG_INIT_VALUE(custQuoteActive);
@@ -57,7 +55,6 @@ DECLARE_CONFIG(ModConfig,
         CONFIG_INIT_VALUE(quote13);
         CONFIG_INIT_VALUE(quote14);
         CONFIG_INIT_VALUE(quote15);
-        CONFIG_INIT_VALUE(numCustomQuotesActive);
 
         
     )
