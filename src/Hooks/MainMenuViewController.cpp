@@ -119,18 +119,6 @@ std::string randomQuote() {
     return quotePool[index];
 };  
 
-
-
-
-
-
-
-
-
-
-    
-
-
 TMPro::TextMeshProUGUI* text;
 // Yoinked from https://github.com/Fernthedev/questui_components/blob/master/test/src/main.cpp
 auto TextObject(QUC::RenderContext& ctx, bool& loaded) {
@@ -186,10 +174,7 @@ MAKE_HOOK_MATCH(MainMenuViewController_DidActivate, &MainMenuViewController::Did
        if (!loaded) {
             loadingViewTransform = TextObject(loadingCtx, loaded);
         }
-       
-
-
-
+        
     } else {
 
     }
